@@ -1,3 +1,152 @@
 * {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  font-family: sans-serif;
+  list-style: none;
+  box-sizing: border-box; }
+
+input {
+  border: none;
+  font-size: 18px;
+  padding-left: 10px;
+  color: #999; }
+
+body {
+  background-color: #eaebef; }
+
+.loginWrapper {
+  width: 55%;
+  margin: 0 auto; }
+
+.headerWrapper {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  align-content: center;
+  padding-top: 20px;
+  padding-bottom: 15px; }
+
+header {
+  background-color: #3b5998;
+  color: white; }
+  header .notFacebook {
+    display: grid;
+    grid-template-columns: .2fr 2fr;
+    align-content: flex-end; }
+  header img {
+    display: block;
+    width: 10.625rem; }
+  header .loginForm {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-self: right; }
+    header .loginForm .loginEmailContainer,
+    header .loginForm .loginPasswordContainer,
+    header .loginForm .loginPasswordContainer {
+      justify-self: right;
+      width: 170px;
+      padding-left: 15px; }
+      header .loginForm .loginEmailContainer input,
+      header .loginForm .loginPasswordContainer input,
+      header .loginForm .loginPasswordContainer input {
+        width: 100%;
+        height: 22px; }
+      header .loginForm .loginEmailContainer p,
+      header .loginForm .loginPasswordContainer p,
+      header .loginForm .loginPasswordContainer p {
+        font-size: 12px; }
+    header .loginForm .loginEmailContainer {
+      width: 170px;
+      text-align: right; }
+      header .loginForm .loginEmailContainer input {
+        width: 100%;
+        height: 22px; }
+    header .loginForm label {
+      display: block;
+      text-align: left;
+      font-size: 12px; }
+    header .loginForm button {
+      align-self: center;
+      width: 45px;
+      height: 22px;
+      margin-left: 10px;
+      border: none;
+      background-color: #4167b2;
+      color: inherit; }
+
+.loginBodyWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 40px; }
+
+.placeholder {
+  display: inline-block;
+  margin-right: 4px;
+  width: 160px;
+  height: 206px;
+  background-color: #3b5998; }
+
+.createAccountForm {
+  width: 400px;
+  justify-self: right; }
+  .createAccountForm h1 {
+    margin-bottom: 10px;
+    color: #333333; }
+  .createAccountForm .createAccountFormSubHeader {
+    font-size: 19px;
+    margin-bottom: 20px;
+    font-weight: 100; }
+  .createAccountForm .nameContainer {
+    width: 100%; }
+    .createAccountForm .nameContainer input {
+      width: 195px;
+      height: 30px;
+      border-radius: 5px; }
+    .createAccountForm .nameContainer input:first-child {
+      float: left; }
+    .createAccountForm .nameContainer input:last-child {
+      float: right; }
+  .createAccountForm .emailInput,
+  .createAccountForm .newPasswordInput {
+    width: 100%;
+    border-radius: 5px;
+    height: 30px;
+    margin-top: 15px; }
+  .createAccountForm .newPasswordInput {
+    margin-bottom: 20px; }
+  .createAccountForm .birthdayWrapper {
+    margin-bottom: 16px; }
+  .createAccountForm .birthdayLabel {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 10.5px; }
+  .createAccountForm .birthdayInput {
+    width: 60px;
+    height: 27px; }
+  .createAccountForm sub {
+    font-size: 11px; }
+  .createAccountForm .genderWrapper {
+    padding-left: 10px;
+    margin-bottom: 10px; }
+    .createAccountForm .genderWrapper input {
+      margin-right: 5px; }
+    .createAccountForm .genderWrapper label {
+      font-size: 18px; }
+    .createAccountForm .genderWrapper .femaleLabel {
+      margin-right: 15px; }
+  .createAccountForm .terms {
+    font-size: 11px;
+    padding: 5px 80px 5px 0px;
+    text-align: left;
+    margin-bottom: 20px;
+    color: #777777; }
+  .createAccountForm button {
+    width: 10rem;
+    height: 34px;
+    font-size: 19px;
+    border: none;
+    border-radius: 8px;
+    background-color: #5e984b;
+    color: white; }
+
+.recentLogins h1 {
+  color: #333333; }

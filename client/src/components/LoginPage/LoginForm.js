@@ -1,18 +1,23 @@
 import React, { Component } from 'react';
+
 class LoginForm extends Component {
     state = {  }
     render() { 
-        return (  
-            <form name='LoginForm' action="">
-
-                <input name='firstName'type="text" placeholder='First Name'/>
-                <input name='lastName'type="text" placeholder='Last Name'/>
-                <input name='email'type="text" placeholder='Mobile Number or email'/>
-                <input name='newPassword'type="text" placeholder='New password'/>
-                <label htmlFor="birthday">Birthday</label>
-
+        return ( 
+            <form className='loginForm' action="">
+                <div className='loginEmailContainer'>
+                    <label htmlFor="">Email or Phone</label>
+                    <input name='emailInput' type="text"/>
+                    {/* <div>kuh</div> */}
+                </div>
+                <div className='loginPasswordContainer'>
+                    <label htmlFor="">Password</label>
+                    <input name='passwordInput' type="text"/>
+                    <p>Forgot Password?</p>
+                </div>
+                <button>Login</button>
             </form>
-        );
+         );
     }
 }
  
