@@ -8,7 +8,7 @@ const jwt = require('jsonwebtoken')
 // MODELS
 const Profile = require('../../models/Profile.js')
 const User = require('../../models/User.js')
-// GET ONE PROFILE
+// GET CURRENT PROFILE
 profileRouter.get('/', passport.authenticate('jwt', { session: false }), (req, res) => {
     const errors = {}
     console.log(req.user.id)
@@ -49,15 +49,6 @@ profileRouter.put('/', passport.authenticate('jwt', { session: false }), (req, r
 
 })
 
-// profileRouter.delete('/', passport.authenticate('jwt', { session: false }), (req, res) => {
-//     Profile.findOneAndRemove({ user: req.user.id }, (err, deletedProfile) => {
-//         if (err) {
-//             res.status(500)
-//             return res.send(err)
-//         }
-//         return res.status(202).send(` Your profile has been deleted`)
-//     })
-// })
 
 // USER AND PROFILE ARE ATTACHED AND THEREFORE NEED TO BE DELETED AT THE SAME TIME
 profileRouter.delete('/', passport.authenticate('jwt', { session: false }), async (req, res) => {

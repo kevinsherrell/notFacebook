@@ -9,9 +9,9 @@ const passport = require('passport')
 // MIDDLEWARE
 app.use(express.json())
 app.use(morgan('dev'))
-    // passport
+// passport
 app.use(passport.initialize())
-    //      passport config
+//      passport config
 require('./config/passport')(passport)
 // CONNECT TO THE DATABASE
 mongoose.connect('mongodb://localhost:27017/notFacebook', { useNewUrlParser: true }, () => {
