@@ -32,16 +32,13 @@ header {
     }
 
     .loginForm {
-        // float: right;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         justify-self: right;
         .loginEmailContainer,
         .loginPasswordContainer,
 
-        // button{
-        //     display: inline-block;
-        // }
+    
         .loginPasswordContainer {
             justify-self: right;
             width: 170px;
@@ -86,23 +83,16 @@ header {
     }
 }
 
-// Recent Logins
 .loginBodyWrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin-top: 40px;
+    margin-top: 30px;
 }
 
-.placeholder {
-    display: inline-block;
-    margin-right: 4px;
-    width: 160px;
-    height: 206px;
-    background-color: #3b5998
-}
+
 
 .createAccountForm {
-    // background-color: red;
+    
     width: 400px;
     justify-self: right;
 
@@ -146,7 +136,9 @@ header {
     .newPasswordInput {
         margin-bottom: 20px;
     }
-
+    .password2Input{
+        margin-top: 0;   
+    }
     .birthdayWrapper {
         margin-bottom: 16px;
     }
@@ -200,11 +192,58 @@ header {
         background-color: #5e984b;
         color: white;
     }
+    hr{
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
 }
 
-// RecentLogin
-.recentLogins {
-    h1 {
+// INTRO
+.intro {
+    padding-top: 30px;
+    h2 {
         color: #333333;
+        font-size: 28px;
+        margin-bottom: 40px;
     }
+}
+.seePhotos, 
+.share,
+.findMore{
+    display: flex;
+    margin-bottom: 30px;
+    p{
+        padding-top: 15px;
+        padding-left: 20px;
+    }
+}
+// Footer
+footer{
+    background-color: #fff;
+    height: 26vh;   
+    margin-top: 80px;
+    font-size: 12px;    
+    div{
+        padding-top: 20px;  
+    }
+    .languages{
+        display: flex;
+        padding-bottom: 10px;   
+        margin-bottom: 10px;   
+        border-bottom: 1px solid black;
+        li{
+            padding-right: 10px;
+        }
+    }
+    .footerLinks{
+        display: flex;
+        flex-wrap: wrap;
+        li{
+            padding-right: 10px;  
+        }
+    }
+    .copyright{
+        padding-top: 20px;   
+    }
+
 }

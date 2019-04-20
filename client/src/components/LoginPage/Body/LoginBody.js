@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 
-import CreateAccountForm from './CreateAccountForm';
-import RecentLogins from './RecentLogins'
+import CreateAccountForm from '../Body/CreateAccountForm'
+import Intro from './Intro'
+import LoginFooter from '../Footer/LoginFooter'
 class LoginBody extends Component {
-    state = {  }
-    render() { 
-        return ( 
+    state = {}
+    render() {
+        return (
             <div className="loginWrapper loginBodyWrapper">
-                <RecentLogins/>
+                <Intro />
                 <CreateAccountForm />
             </div>
-         );
+        );
     }
 }
- 
+
 export default LoginBody;

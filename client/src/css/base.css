@@ -3,7 +3,8 @@
   padding: 0;
   font-family: sans-serif;
   list-style: none;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  text-decoration: none; }
 
 input {
   border: none;
@@ -76,14 +77,7 @@ header {
 .loginBodyWrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin-top: 40px; }
-
-.placeholder {
-  display: inline-block;
-  margin-right: 4px;
-  width: 160px;
-  height: 206px;
-  background-color: #3b5998; }
+  margin-top: 30px; }
 
 .createAccountForm {
   width: 400px;
@@ -113,6 +107,8 @@ header {
     margin-top: 15px; }
   .createAccountForm .newPasswordInput {
     margin-bottom: 20px; }
+  .createAccountForm .password2Input {
+    margin-top: 0; }
   .createAccountForm .birthdayWrapper {
     margin-bottom: 16px; }
   .createAccountForm .birthdayLabel {
@@ -147,6 +143,46 @@ header {
     border-radius: 8px;
     background-color: #5e984b;
     color: white; }
+  .createAccountForm hr {
+    margin-top: 20px;
+    margin-bottom: 20px; }
 
-.recentLogins h1 {
-  color: #333333; }
+.intro {
+  padding-top: 30px; }
+  .intro h2 {
+    color: #333333;
+    font-size: 28px;
+    margin-bottom: 40px; }
+
+.seePhotos,
+.share,
+.findMore {
+  display: flex;
+  margin-bottom: 30px; }
+  .seePhotos p,
+  .share p,
+  .findMore p {
+    padding-top: 15px;
+    padding-left: 20px; }
+
+footer {
+  background-color: #fff;
+  height: 26vh;
+  margin-top: 80px;
+  font-size: 12px; }
+  footer div {
+    padding-top: 20px; }
+  footer .languages {
+    display: flex;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid black; }
+    footer .languages li {
+      padding-right: 10px; }
+  footer .footerLinks {
+    display: flex;
+    flex-wrap: wrap; }
+    footer .footerLinks li {
+      padding-right: 10px; }
+  footer .copyright {
+    padding-top: 20px; }

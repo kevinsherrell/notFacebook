@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import LoginForm from './LoginForm'
 
-import Logo from '../../images/facebookLogo.png'
+import Logo from '../../../images/facebookLogo.png'
 
 class LoginHeader extends Component {
     state = {}
