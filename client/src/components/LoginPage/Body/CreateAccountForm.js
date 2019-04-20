@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import axios from 'axios'
+
+
 class CreateAccountForm extends Component {
     state = {
         firstName: '',
@@ -28,18 +31,35 @@ onChangeBirthdate = e =>{
 
 onSubmit = e => {
     e.preventDefault()
-    console.log(this.state)
+    const newUser = {
+        firstName: this.state.firstName,
+        lastName: this.state.lastName,
+        birthdate: this.state.birthdate,
+        email: this.state.email,
+        password: this.state.password,
+        password2: this.state.password2,
+        gender: this.state.gender
+    }
+
+    axios.post('/api/auth/register', newUser)
+    .then(res => console.log(res.data))
+    .catch(err => this.setState({errors: err.response.data}))
+   
 }
 
 render() {
-    console.log(this.month)
+  
+
+    const { errors } = this.state
+    console.log(errors)
+
     return (
 
         <form className='createAccountForm' name='createAccountForm' onSubmit={this.onSubmit} t>
             <h1>Create a New Account</h1>
             <p className='createAccountFormSubHeader'>It's free and always will be.</p>
             <div className='nameContainer'>
-                <input name='firstName' type="text" placeholder='First Name' value={this.state.firstName} onChange={this.onChange} />
+                <input  className={errors.firstName && 'isInvalid'} name='firstName' type="text" placeholder='First Name' value={this.state.firstName} onChange={this.onChange} />
                 <input name='lastName' type="text" placeholder='Last Name' value={this.state.lastName} onChange={this.onChange} />
             </div>
             <input className='emailInput' name='email' type="text" placeholder='E-mail' value={this.state.email} onChange={this.onChange} />
@@ -122,8 +142,8 @@ render() {
                 </select><sub>Why do I need to provide my birthday</sub>
             </div>
             <div className='genderWrapper'>
-                <input name='gender' type="radio" onChange={this.onChange} value='male' /><label className='femaleLabel' htmlFor=""  >Female</label>
-                <input name='gender' type="radio" onChange={this.onChange} value='female' /><label htmlFor="" >Male</label>
+                <input name='gender' type="radio" onChange={this.onChange} value='female' /><label className='femaleLabel' htmlFor=""  >Female</label>
+                <input name='gender' type="radio" onChange={this.onChange} value='male' /><label htmlFor="" >Male</label>
             </div>
             <p className='terms'>By clicking Sign Up, you agree to our Terms, Data Policy and Cookies Policy. You may receive SMS Notifications from us and can opt out any time.</p>
             <button>Sign Up</button>

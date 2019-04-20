@@ -47,6 +47,8 @@ header {
             input {
                 width: 100%;
                 height: 22px;
+                font-size: 12px;  
+
             }
 
             p {
@@ -61,6 +63,7 @@ header {
             input {
                 width: 100%;
                 height: 22px;
+                font-size: 12px;
             }
         }
 
@@ -79,10 +82,12 @@ header {
             background-color: #4167b2;
             color: inherit;
         }
-
+        
     }
 }
-
+.isInvalid{
+    border: 1px solid red;
+}
 .loginBodyWrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;

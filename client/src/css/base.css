@@ -50,7 +50,8 @@ header {
       header .loginForm .loginPasswordContainer input,
       header .loginForm .loginPasswordContainer input {
         width: 100%;
-        height: 22px; }
+        height: 22px;
+        font-size: 12px; }
       header .loginForm .loginEmailContainer p,
       header .loginForm .loginPasswordContainer p,
       header .loginForm .loginPasswordContainer p {
@@ -60,7 +61,8 @@ header {
       text-align: right; }
       header .loginForm .loginEmailContainer input {
         width: 100%;
-        height: 22px; }
+        height: 22px;
+        font-size: 12px; }
     header .loginForm label {
       display: block;
       text-align: left;
@@ -73,6 +75,9 @@ header {
       border: none;
       background-color: #4167b2;
       color: inherit; }
+
+.isInvalid {
+  border: 1px solid red; }
 
 .loginBodyWrapper {
   display: grid;
