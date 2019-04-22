@@ -11,6 +11,11 @@ class App extends Component {
         return ( 
             <Router>
                 <Route exact path='/' component={LoginPage}/>
+                {/* <div>
+                    <header>
+                        <div className='circularImageTest'></div>
+                    </header>
+                </div> */}
             </Router>
          );
     }
