@@ -42,7 +42,8 @@ authRouter.post('/register', (req, res, next) => {
             lastName: req.body.lastName,
             email: req.body.email,
             birthdate: req.body.birthdate,
-            password: req.body.password
+            password: req.body.password,
+            gender: req.body.gender
         })
 
         bcrypt.genSalt(10, (err, salt) => {

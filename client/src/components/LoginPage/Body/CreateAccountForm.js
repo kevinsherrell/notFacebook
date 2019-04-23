@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import axios from 'axios'
-
-
+import { withRouter } from 'react-router-dom'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import { registerUser } from '../../../actions/authActions'
 class CreateAccountForm extends Component {
     state = {
         firstName: '',
@@ -11,7 +12,7 @@ class CreateAccountForm extends Component {
         password: '',
         password2: '',
         gender: '',
-        errors: {}
+        regError: {}
     }
 
     onChange = e => {
@@ -19,7 +20,7 @@ class CreateAccountForm extends Component {
 
             [e.target.name]: e.target.value
         })
-        console.log(this.state.birthdate)
+        console.log(this.state.gender)
     }
     // This is an onChange specifically for the birthdate fields (month, day, year) -- Will change once a better solution is found
     onChangeBirthdate = e => {
@@ -41,30 +42,32 @@ class CreateAccountForm extends Component {
             gender: this.state.gender
         }
 
-        axios.post('/api/auth/register', newUser)
-            .then(res => console.log(res.data))
-            .catch(err => this.setState({ errors: err.response.data }))
+        this.props.registerUser(newUser, this.props.history)
 
     }
-
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.regError) {
+            this.setState({ regError: nextProps.regError })
+        }
+    }
     render() {
 
 
-        const { errors } = this.state
-        console.log(errors)
+        const { regError } = this.state
 
         return (
 
             <form className='createAccountForm' name='createAccountForm' onSubmit={this.onSubmit} t>
+
                 <h1>Create a New Account</h1>
                 <p className='createAccountFormSubHeader'>It's free and always will be.</p>
                 <div className='nameContainer'>
-                    <input className={errors.firstName && 'isInvalid'} name='firstName' type="text" placeholder={errors.firstName ? errors.firstName : 'First Name'} value={this.state.firstName} onChange={this.onChange} />
-                    <input className={errors.lastName && 'isInvalid'} name='lastName' type="text" placeholder={errors.lastName ? errors.lastName : 'Last Name'} value={this.state.lastName} onChange={this.onChange} />
+                    <input className={regError.firstName && 'isInvalid'} name='firstName' type="text" placeholder={regError.firstName ? regError.firstName : 'First Name'} value={this.state.firstName} onChange={this.onChange} />
+                    <input className={regError.lastName && 'isInvalid'} name='lastName' type="text" placeholder={regError.lastName ? regError.lastName : 'Last Name'} value={this.state.lastName} onChange={this.onChange} />
                 </div>
-                <input className={`emailInput ${errors.email && 'isInvalid'}`} name='email' type="text" placeholder={errors.email ? errors.email : 'E-mail'} value={this.state.email} onChange={this.onChange} />
-                <input className={`newPasswordInput ${errors.password && 'isInvalid'}`} name='password' type="password" placeholder={errors.password ? errors.password : 'New password'} value={this.state.password} onChange={this.onChange} />
-                <input className={`newPasswordInput password2Input ${errors.password2 && 'isInvalid'}`} name='password2' type="password" placeholder={errors.password2 ? errors.password2 : 'Confirm Password'} value={this.state.password2} onChange={this.onChange} />
+                <input className={`emailInput ${regError.email && 'isInvalid'}`} name='email' type="text" placeholder={regError.email ? regError.email : 'E-mail'} value={this.state.email} onChange={this.onChange} />
+                <input className={`newPasswordInput ${regError.password && 'isInvalid'}`} name='password' type="password" placeholder={regError.password ? regError.password : 'New password'} value={this.state.password} onChange={this.onChange} />
+                <input className={`newPasswordInput password2Input ${regError.password2 && 'isInvalid'}`} name='password2' type="password" placeholder={regError.password2 ? regError.password2 : 'Confirm Password'} value={this.state.password2} onChange={this.onChange} />
                 <label className='birthdayLabel' htmlFor="birthdayInput">Birthday</label>
                 <div className='birthdayWrapper'>
                     <select className='birthdayInput' name="month" id="birthdayInput" value={this.state.month} onChange={this.onChangeBirthdate} ref={select => this.month = select} required>
@@ -141,7 +144,7 @@ class CreateAccountForm extends Component {
                         <option value="2000">2000</option>
                     </select><sub>Why do I need to provide my birthday</sub>
                 </div>
-                <div className={`genderWrapper ${errors.gender && 'isInvalid'}`}>
+                <div className={`genderWrapper ${regError.gender && 'isInvalid'}`}>
                     <input name='gender' type="radio" onChange={this.onChange} value='female' /><label className='femaleLabel' htmlFor=""  >Female</label>
                     <input name='gender' type="radio" onChange={this.onChange} value='male' /><label htmlFor="" >Male</label>
                 </div>
@@ -154,4 +157,17 @@ class CreateAccountForm extends Component {
     }
 }
 
-export default CreateAccountForm;
+CreateAccountForm.propTypes = {
+    registerUser: PropTypes.func.isRequired,
+    auth: PropTypes.object.isRequired,
+    // errors: PropTypes.object.isRequired
+    regError: PropTypes.object.isRequired
+}
+
+const mapStateToProps = state => ({
+    auth: state.auth,
+     // errors: PropTypes.object.isRequired,
+    regError: state.regError
+
+})
+export default connect(mapStateToProps, { registerUser })(withRouter(CreateAccountForm));

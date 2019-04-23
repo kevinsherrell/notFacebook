@@ -1,41 +1,67 @@
 import React, { Component } from 'react';
-
+import { withRouter } from 'react-router-dom'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import { userLogin } from '../../../actions/authActions'
 class LoginForm extends Component {
-    state = { 
+    state = {
         email: '',
-        password: ''
-     }
+        password: '',
+        loginError: {}
+    }
 
-     onChange= e =>{
-         this.setState({
-             [e.target.name]: e.target.value
-         })
-     }
-     onSubmit = e =>{
-         e.preventDefault()
-         const user = {
-             email: this.state.email,
-             password: this.state.password
-         }
-         console.log(user)
-     }
-    render() { 
-        return ( 
+    onChange = e => {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    }
+    onSubmit = e => {
+        e.preventDefault()
+        const userData = {
+            email: this.state.email,
+            password: this.state.password
+        }
+        // console.log(user)
+        this.props.userLogin(userData, this.props.history)
+    }
+
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.auth.isAuthenticated) {
+            this.props.history.push('/profile')
+        }
+        if (nextProps.loginError) {
+            this.setState({ loginError: nextProps.loginError })
+        }
+    }
+
+    render() {
+        const { loginError } = this.state
+
+        return (
             <form className='loginForm' action="" onSubmit={this.onSubmit}>
-                <div className='loginEmailContainer'>
+                <div className={`loginEmailContainer ${loginError.email && "isInvalid"}`}>
                     <label htmlFor="">Email or Phone</label>
-                    <input name='email' type="text" onChange = {this.onChange} value={this.state.email}/>
+                    <input name='email' type="text" onChange={this.onChange} value={this.state.email} placeholder='Email' />
 
                 </div>
                 <div className='loginPasswordContainer'>
                     <label htmlFor="">Password</label>
-                    <input name='password' type="password" onChange={this.onChange} value={this.state.password}/>
+                    <input name='password' type="password" onChange={this.onChange} value={this.state.password} placeholder='Password' />
                     <p>Forgot Password?</p>
                 </div>
-                <button>Login</button>
-            </form> 
-         );
+                <button type="submit">Login</button>
+            </form>
+        );
     }
 }
- 
-export default LoginForm;
+LoginForm.propTypes = {
+    userLogin: PropTypes.func.isRequired,
+    auth: PropTypes.object.isRequired,
+    loginError: PropTypes.object.isRequired
+}
+const mapStateToProps = (state) => ({
+    auth: state.auth,
+    // errors: state.errors
+    loginError: state.loginError
+})
+export default connect(mapStateToProps, { userLogin })(withRouter(LoginForm));
