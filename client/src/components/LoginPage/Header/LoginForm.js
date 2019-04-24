@@ -39,14 +39,14 @@ class LoginForm extends Component {
 
         return (
             <form className='loginForm' action="" onSubmit={this.onSubmit}>
-                <div className={`loginEmailContainer ${loginError.email && "isInvalid"}`}>
+                <div className='loginEmailContainer'>
                     <label htmlFor="">Email or Phone</label>
-                    <input name='email' type="text" onChange={this.onChange} value={this.state.email} placeholder='Email' />
+                    <input className={loginError.email && "isInvalid"} name='email' type="text" onChange={this.onChange} value={this.state.email} placeholder={loginError.email ? loginError.email : 'Email'} />
 
                 </div>
                 <div className='loginPasswordContainer'>
                     <label htmlFor="">Password</label>
-                    <input name='password' type="password" onChange={this.onChange} value={this.state.password} placeholder='Password' />
+                    <input className={loginError.password && 'isInvalid'} name='password' type="password" onChange={this.onChange} value={this.state.password} placeholder={loginError.password ? loginError.password : 'Password'} />
                     <p>Forgot Password?</p>
                 </div>
                 <button type="submit">Login</button>

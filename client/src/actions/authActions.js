@@ -1,9 +1,9 @@
 import axios from 'axios'
 import thunk from 'redux-thunk'
 import setAuthToken from '../utils/setAuthToken'
-import jwtDecode from 'jwt-decode'
+import jwt_decode from 'jwt-decode'
 // import { GET_ERRORS, SET_CURRENT_USER } from './types'
-import {GET_LOGIN_ERRORS, GET_REGISTER_ERRORS, SET_CURRENT_USER} from './types'
+import { GET_LOGIN_ERRORS, GET_REGISTER_ERRORS, SET_CURRENT_USER } from './types'
 // USER REGISTRATION
 export const registerUser = (userData, history) => dispatch => {
     axios.post('/api/auth/register', userData)
@@ -21,9 +21,9 @@ export const userLogin = userData => dispatch => {
     axios.post('/api/auth/login', userData)
         .then(res => {
             const { token } = res.data
-            localStorage.setItem('jwtToken, token')
+            localStorage.setItem('jwtToken', token)
             setAuthToken(token)
-            const decoded = jwtDecode(token)
+            const decoded = jwt_decode(token)
             dispatch(setCurrentUser(decoded))
         })
         .catch(err => {
@@ -39,4 +39,12 @@ export const setCurrentUser = decoded => {
         type: SET_CURRENT_USER,
         payload: decoded
     }
+}
+// LOGOUT
+export const userLogout = ()=>dispatch=>{
+    localStorage.removeItem('jwtToken')
+
+    setAuthToken(false)
+
+    dispatch(setCurrentUser({}))
 }

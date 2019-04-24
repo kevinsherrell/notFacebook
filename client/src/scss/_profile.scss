@@ -1,0 +1,76 @@
+// Header 
+.profileHeaderWrapper{
+    display: flex;
+    max-width: 55%;
+    margin: 0 auto;
+    padding: 8px 0;  
+}
+.profileHeaderGridContainerLeft,
+.profileHeaderGridContainerRight{
+    display: flex;
+}
+.profileHeaderGridContainerRight{
+    justify-content: right;
+}
+.notFacebookLogo{
+    background-color: $secondaryColor;
+    width: 45px;
+    border-radius: 3px;
+    padding: 0 5px 0 5px;
+    .notFacebookText{
+        text-align: center;
+        // font-size: 30px;
+        color: $primaryColor;
+        width: 100%;
+    }
+}
+.searchForm{
+    margin-left: 4px;
+    border: 1px solid rgba(0,0,0,.3);
+    .searchInput,
+    .searchSubmit{
+        height: 100%;
+    }
+    .searchInput{
+        width: 300px;
+    }
+    .searchSubmit{
+        width: 25px;
+        border: none;
+        vertical-align: top;
+    }
+}
+
+.headerAvatarContainer{
+    display: flex;
+}
+.headerAvatar{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    color: $primaryColor;
+    background-color: $secondaryColor;
+    align-self: center;
+}
+.nameHeader{
+    align-self: center;
+    border-right: 1px solid black;
+}
+.home,
+.create,
+.communications{
+    align-self: center;
+    border-right: 1px solid black;
+}
+
+.communications{
+    
+    span{
+        padding-right: 14px;
+        i{
+            font-size: 25px;
+            color: rgba(0,0,0,.5)
+        }
+    }
+    
+}
