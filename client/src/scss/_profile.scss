@@ -1,8 +1,9 @@
 // Header 
-.profileHeaderWrapper{
-    display: flex;
-    max-width: 55%;
-    margin: 0 auto;
+.profileWrapper{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    max-width: 65%;  
+    margin-left: 10%;
     padding: 8px 0;  
 }
 .profileHeaderGridContainerLeft,
@@ -10,7 +11,7 @@
     display: flex;
 }
 .profileHeaderGridContainerRight{
-    justify-content: right;
+    justify-content: flex-end;  
 }
 .notFacebookLogo{
     background-color: $secondaryColor;
@@ -32,7 +33,7 @@
         height: 100%;
     }
     .searchInput{
-        width: 300px;
+        width: 450px;  
     }
     .searchSubmit{
         width: 25px;
@@ -52,25 +53,150 @@
     background-color: $secondaryColor;
     align-self: center;
 }
-.nameHeader{
-    align-self: center;
-    border-right: 1px solid black;
-}
+.nameHeader,
 .home,
 .create,
 .communications{
     align-self: center;
     border-right: 1px solid black;
 }
-
-.communications{
-    
+.nameHeader,
+.home,
+.create{
+    font-size: 12px;
+}
+.help{
+    align-self: center;
+    padding-right: 20px;
     span{
-        padding-right: 14px;
+        padding-left: 10px;   
         i{
-            font-size: 25px;
+            font-size: 20px;
             color: rgba(0,0,0,.5)
         }
     }
     
+}
+.nameHeader{
+    padding:0 10px 0 5px;
+}
+.home{
+    padding: 0 10px; 
+}
+.create{
+    padding: 0 10px;
+}
+.communications{
+    padding: 0 10px;
+    span{
+        // padding-right: 14px; 
+        i{
+            font-size: 20px;
+            color: rgba(0,0,0,.5)
+        }
+    }
+    .messenger{
+        padding: 0 10px;
+    }
+}
+.headerDropDown{
+    align-self: flex-end;
+    span{
+        i{
+            color: rgba(0,0,0,.5)
+        }
+    }
+}
+// PROFILE BODY
+.profileBodyWrapper{
+    max-width: 65%;  
+    margin-left: 10%;
+    .profileBody{
+        display: flex;  
+        margin-top: 10px;
+        // height: 100%;        
+
+        .left{
+            width: 20%;
+            .leftAvatarContainer{
+                display: flex;  
+               
+                .leftAvatar{  
+                    border-radius: 50%;
+                    height: 25px;
+                    width: 25px;           
+                    background-color: lightblue;  
+                    overflow: hidden;
+                    padding-right: 5px;
+                }
+    
+            }
+            
+            p{
+                padding-left: 5px;  
+                align-self: center; 
+                font-size: 14px;    
+            }
+            // background-color: pink;    
+            
+        }
+        .mid{
+            width: 50%;   
+            margin: 0 10px;
+            // background-color: orange;
+            .createPost{
+                width: 100%;  
+                height: 150px;
+                border: 1px solid rgba(0,0,0,.2);    
+                border-radius: 5px;  
+                background-color: #fff;  
+                .postHeader{
+                    height: 20%;
+                    font-size: 12px;
+                    padding: 8px 10px;    
+                    border-bottom: 1px solid rgba(0,0,0,.08);
+                    background-color: #eaebef;  
+                }
+                .postContainer{
+                    width: 96%;    
+                    height: 100%;
+                    margin: 0 auto;
+                    .postBody{
+                        display: flex;
+                        padding: 15px 0;
+                        height: 50%;    
+                        border-bottom: 1px solid rgba(0,0,0,.08);  
+                    .postBodyAvatarContainer{
+                        
+                        border-radius: 50%;
+                        background-color: lightblue;
+                        overflow: hidden;
+                    }
+                    .postBodyAvatar{
+                        width: 40px;
+                        height: 40px;
+                    }
+                    .postBodyInput{
+                        width: 90%;
+                        input{
+                            width: 100%;
+                            height: 40px;
+                        }
+                    }
+
+                    }
+                    .postOptions{
+                        height: 30%;
+                        
+                    }
+                }
+               
+                // background-color: lightblue;    
+            }
+        }
+        .right{
+            width: 30%;
+            // background-color: lightblue;
+        }
+    }
 }

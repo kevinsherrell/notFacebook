@@ -200,10 +200,11 @@ footer {
   background-size: cover;
   border-radius: 50%; }
 
-.profileHeaderWrapper {
-  display: flex;
-  max-width: 55%;
-  margin: 0 auto;
+.profileWrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  max-width: 65%;
+  margin-left: 10%;
   padding: 8px 0; }
 
 .profileHeaderGridContainerLeft,
@@ -211,7 +212,7 @@ footer {
   display: flex; }
 
 .profileHeaderGridContainerRight {
-  justify-content: right; }
+  justify-content: flex-end; }
 
 .notFacebookLogo {
   background-color: white;
@@ -230,7 +231,7 @@ footer {
   .searchForm .searchSubmit {
     height: 100%; }
   .searchForm .searchInput {
-    width: 300px; }
+    width: 450px; }
   .searchForm .searchSubmit {
     width: 25px;
     border: none;
@@ -247,18 +248,107 @@ footer {
   background-color: white;
   align-self: center; }
 
-.nameHeader {
-  align-self: center;
-  border-right: 1px solid black; }
-
+.nameHeader,
 .home,
 .create,
 .communications {
   align-self: center;
   border-right: 1px solid black; }
 
-.communications span {
-  padding-right: 14px; }
+.nameHeader,
+.home,
+.create {
+  font-size: 12px; }
+
+.help {
+  align-self: center;
+  padding-right: 20px; }
+  .help span {
+    padding-left: 10px; }
+    .help span i {
+      font-size: 20px;
+      color: rgba(0, 0, 0, 0.5); }
+
+.nameHeader {
+  padding: 0 10px 0 5px; }
+
+.home {
+  padding: 0 10px; }
+
+.create {
+  padding: 0 10px; }
+
+.communications {
+  padding: 0 10px; }
   .communications span i {
-    font-size: 25px;
+    font-size: 20px;
     color: rgba(0, 0, 0, 0.5); }
+  .communications .messenger {
+    padding: 0 10px; }
+
+.headerDropDown {
+  align-self: flex-end; }
+  .headerDropDown span i {
+    color: rgba(0, 0, 0, 0.5); }
+
+.profileBodyWrapper {
+  max-width: 65%;
+  margin-left: 10%; }
+  .profileBodyWrapper .profileBody {
+    display: flex;
+    margin-top: 10px; }
+    .profileBodyWrapper .profileBody .left {
+      width: 20%; }
+      .profileBodyWrapper .profileBody .left .leftAvatarContainer {
+        display: flex; }
+        .profileBodyWrapper .profileBody .left .leftAvatarContainer .leftAvatar {
+          border-radius: 50%;
+          height: 25px;
+          width: 25px;
+          background-color: lightblue;
+          overflow: hidden;
+          padding-right: 5px; }
+      .profileBodyWrapper .profileBody .left p {
+        padding-left: 5px;
+        align-self: center;
+        font-size: 14px; }
+    .profileBodyWrapper .profileBody .mid {
+      width: 50%;
+      margin: 0 10px; }
+      .profileBodyWrapper .profileBody .mid .createPost {
+        width: 100%;
+        height: 150px;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        background-color: #fff; }
+        .profileBodyWrapper .profileBody .mid .createPost .postHeader {
+          height: 20%;
+          font-size: 12px;
+          padding: 8px 10px;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+          background-color: #eaebef; }
+        .profileBodyWrapper .profileBody .mid .createPost .postContainer {
+          width: 96%;
+          height: 100%;
+          margin: 0 auto; }
+          .profileBodyWrapper .profileBody .mid .createPost .postContainer .postBody {
+            display: flex;
+            padding: 15px 0;
+            height: 50%;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08); }
+            .profileBodyWrapper .profileBody .mid .createPost .postContainer .postBody .postBodyAvatarContainer {
+              border-radius: 50%;
+              background-color: lightblue;
+              overflow: hidden; }
+            .profileBodyWrapper .profileBody .mid .createPost .postContainer .postBody .postBodyAvatar {
+              width: 40px;
+              height: 40px; }
+            .profileBodyWrapper .profileBody .mid .createPost .postContainer .postBody .postBodyInput {
+              width: 90%; }
+              .profileBodyWrapper .profileBody .mid .createPost .postContainer .postBody .postBodyInput input {
+                width: 100%;
+                height: 40px; }
+          .profileBodyWrapper .profileBody .mid .createPost .postContainer .postOptions {
+            height: 30%; }
+    .profileBodyWrapper .profileBody .right {
+      width: 30%; }
