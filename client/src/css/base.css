@@ -229,7 +229,7 @@ footer {
   border: 1px solid rgba(0, 0, 0, 0.3); }
   .searchForm .searchInput,
   .searchForm .searchSubmit {
-    height: 100%; }
+    height: 26px; }
   .searchForm .searchInput {
     width: 450px; }
   .searchForm .searchSubmit {
@@ -293,7 +293,8 @@ footer {
 
 .profileBodyWrapper {
   max-width: 65%;
-  margin-left: 10%; }
+  margin-left: 10%;
+  z-index: 1; }
   .profileBodyWrapper .profileBody {
     display: flex;
     margin-top: 10px; }
@@ -316,13 +317,14 @@ footer {
       width: 50%;
       margin: 0 10px; }
       .profileBodyWrapper .profileBody .mid .createPost {
+        position: relative;
         width: 100%;
-        height: 150px;
+        height: 175px;
         border: 1px solid rgba(0, 0, 0, 0.2);
         border-radius: 5px;
         background-color: #fff; }
         .profileBodyWrapper .profileBody .mid .createPost .postHeader {
-          height: 20%;
+          height: 40px;
           font-size: 12px;
           padding: 8px 10px;
           border-bottom: 1px solid rgba(0, 0, 0, 0.08);
@@ -334,9 +336,10 @@ footer {
           .profileBodyWrapper .profileBody .mid .createPost .postContainer .postBody {
             display: flex;
             padding: 15px 0;
-            height: 50%;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.08); }
+            height: 50%; }
             .profileBodyWrapper .profileBody .mid .createPost .postContainer .postBody .postBodyAvatarContainer {
+              width: 40px;
+              height: 40px;
               border-radius: 50%;
               background-color: lightblue;
               overflow: hidden; }
@@ -344,11 +347,49 @@ footer {
               width: 40px;
               height: 40px; }
             .profileBodyWrapper .profileBody .mid .createPost .postContainer .postBody .postBodyInput {
-              width: 90%; }
-              .profileBodyWrapper .profileBody .mid .createPost .postContainer .postBody .postBodyInput input {
+              width: 90%;
+              height: 100%; }
+              .profileBodyWrapper .profileBody .mid .createPost .postContainer .postBody .postBodyInput textarea {
+                border: none;
+                resize: none;
                 width: 100%;
-                height: 40px; }
+                height: 100%; }
+              .profileBodyWrapper .profileBody .mid .createPost .postContainer .postBody .postBodyInput input[type='text'],
+              .profileBodyWrapper .profileBody .mid .createPost .postContainer .postBody .postBodyInput input[type='password'],
+              .profileBodyWrapper .profileBody .mid .createPost .postContainer .postBody .postBodyInput textarea, .profileBodyWrapper .profileBody .mid .createPost .postContainer .postBody .postBodyInput select {
+                outline: none; }
+              .profileBodyWrapper .profileBody .mid .createPost .postContainer .postBody .postBodyInput textarea[placeholder] {
+                font-size: 20px;
+                padding: 8px; }
           .profileBodyWrapper .profileBody .mid .createPost .postContainer .postOptions {
-            height: 30%; }
+            position: absolute;
+            bottom: 0;
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
+            width: 96%;
+            height: 50px; }
     .profileBodyWrapper .profileBody .right {
       width: 30%; }
+
+.isFocused {
+  position: relative;
+  height: 26px;
+  z-index: 2; }
+
+.notFocusedAfter {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: all ease-in 300ms; }
+
+.notFocusedBefore {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0);
+  transition: all ease-in 300ms; }

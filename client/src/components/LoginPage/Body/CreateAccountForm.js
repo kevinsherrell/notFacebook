@@ -28,6 +28,7 @@ class CreateAccountForm extends Component {
             birthdate: `${this.month.value}/${this.day.value}/${this.year.value}`
         })
         console.log(this.state.birthdate)
+        console.log(this.month.className)
     }
 
     onSubmit = e => {
@@ -70,7 +71,7 @@ class CreateAccountForm extends Component {
                 <input className={`newPasswordInput password2Input ${regError.password2 && 'isInvalid'}`} name='password2' type="password" placeholder={regError.password2 ? regError.password2 : 'Confirm Password'} value={this.state.password2} onChange={this.onChange} />
                 <label className='birthdayLabel' htmlFor="birthdayInput">Birthday</label>
                 <div className='birthdayWrapper'>
-                    <select className='birthdayInput' name="month" id="birthdayInput" value={this.state.month} onChange={this.onChangeBirthdate} ref={select => this.month = select} required>
+                    <select className='birthdayInput' name="month" id="birthdayInput" value={this.state.month} onChange={this.onChangeBirthdate} ref={c => this.month = c} required>
                         <option value="month">Month</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -85,7 +86,7 @@ class CreateAccountForm extends Component {
                         <option value="11">11</option>
                         <option value="12">12</option>
                     </select>
-                    <select className='birthdayInput' name="day" id="birthdayInput" value={this.state.day} onChange={this.onChangeBirthdate} ref={select => this.day = select} required>
+                    <select className='birthdayInput' name="day" id="birthdayInput" value={this.state.day} onChange={this.onChangeBirthdate} ref={c => this.day = c} required>
                         <option value="Day">Day</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -119,7 +120,7 @@ class CreateAccountForm extends Component {
                         <option value="30">30</option>
                         <option value="31">31</option>
                     </select>
-                    <select className='birthdayInput' name="year" id="birthdayInput" value={this.state.year} onChange={this.onChangeBirthdate} ref={select => this.year = select} required>
+                    <select className='birthdayInput' name="year" id="birthdayInput" value={this.state.year} onChange={this.onChangeBirthdate} ref={c => this.year = c} required>
 
                         <option value="Year">Year</option>
                         <option value="2019">2019</option>
