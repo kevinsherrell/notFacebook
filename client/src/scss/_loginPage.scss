@@ -3,7 +3,7 @@ body {
 
 }
 // HEADER
-.loginWrapper {
+.loginWrapper {  
     width: 55%;
     margin: 0 auto;
 }
@@ -12,16 +12,17 @@ body {
     display: grid;
     grid-template-columns: 3fr 1fr;
     align-content: center;
-    padding-top: 20px;
-    padding-bottom: 15px;
+    padding-top: 15px;  
+    padding-bottom: 10px;    
 }
 
 header {
+    
     background-color: $primaryColor;
     color: white;
-
+    z-index: 3;
     .notFacebook {
-        display: grid;
+        display: grid;  
         grid-template-columns: .2fr 2fr;
         align-content: flex-end;
     }

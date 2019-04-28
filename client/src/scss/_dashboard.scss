@@ -1,4 +1,11 @@
 // Header 
+.dashboardHeader{
+    position: fixed;
+    width: 100%;
+    margin-top: 0;
+    top: 0; 
+    z-index: 0; 
+}
 .profileWrapper{
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -110,42 +117,131 @@
 // PROFILE BODY
 .profileBodyWrapper{
     max-width: 65%;  
+    margin-top: 54px;    
     margin-left: 10%;
     z-index: 1;
     .profileBody{
         display: flex;  
         margin-top: 10px;
-        // height: 100%;        
-
+        // height: 100%;   
+        
+        
+        .leftSideContainer{
+            padding: 0 5px;       
+        }
         .left{
+            position: fixed;         
             width: 20%;
+            p{
+                padding-left: 15px;  
+                font-size: 14px;  
+            }
+            i{
+                font-size: 15px;      
+            }
+            // 
+            .newsFeed,
+            .leftMessenger,          
+            .watch,           
+            .marketplace,           
+            .dragonCity,          
+            .pages,          
+            .groups,            
+            .oculus,          
+            .events,         
+            .fundraisers,
+            .seeMore{
+                padding-bottom: 5px;
+            } 
+            // 
+            .newsFeed{
+                i{
+                    color: #5caee8;
+                }
+            }
+            .leftMessenger{
+                i{
+                    color: #089cf4;
+                }
+            }
+            .watch{
+                i{
+                    color: #e4ffff;
+                }
+            }
+            .marketplace{
+                i{
+                    color: #fcffff;
+                }
+            }
+            .dragonCity{
+                i{
+                    color: #57b8a5;
+                }
+            }
+            .pages{
+                i{
+                    color: #dc412d;
+                }
+            }
+            .groups{
+                i{
+                    color: #f9a159;
+                }
+            }
+            .oculus{
+                i{
+                    color: #3983fe;
+                }
+            }
+            .events{
+                i{
+                    color: #d63056;
+                }
+            }
+            .fundraisers{
+                i{
+                    color: #202427;
+                }
+            }
+            .seeMore{
+                i{
+                    color: #3983fe;
+                }
+            }
+            
+            
+            .leftHeader{
+                font-weight: 100;
+                padding: 20px 0;    
+            }
             .leftAvatarContainer{
-                display: flex;  
+               margin-bottom: 15px;
                
                 .leftAvatar{  
-                    border-radius: 50%;
+                    border-radius: 50%;  
                     height: 25px;
                     width: 25px;           
                     background-color: lightblue;  
                     overflow: hidden;
                     padding-right: 5px;
                 }
-    
+                p{
+                    padding-left: 5px;  
+                    align-self: center; 
+                    font-size: 14px;    
+                }  
             }
-            
-            p{
-                padding-left: 5px;  
-                align-self: center; 
-                font-size: 14px;    
-            }
-            // background-color: pink;    
+         
             
         }
         .mid{
-            width: 50%;   
+            width: 50%;     
             
-            margin: 0 10px;
-            // background-color: orange;
+            // margin: 0 10px;
+            margin-left: 20%;
+            // margin-top: 40%;
+            
             .createPost{
                 position: relative;      
                 width: 100%;  
@@ -220,17 +316,20 @@
             }
         }
         .right{
+            position: relative;  
+            padding-left: 10px;
             width: 30%;
             // background-color: lightblue;
+              
         }
     }
 }
-
+// Conditional Classes
 .isFocused{
     position: relative;
 
     height: 26px;
-    z-index: 2;
+    z-index: 4;
 }
 .notFocusedAfter{
     position: fixed;
@@ -253,3 +352,24 @@
     transition: all ease-in 300ms;              
 
 }  
+// 
+
+.flex{
+    display: flex;
+}
+.block{
+    display: block;
+}
+.testblock,
+.testblock2{
+    height: 300px;
+    margin-bottom: 5px;
+    background-color: pink;
+}
+.testblock2{
+    position: sticky;
+    top: 54px;      
+    // margin-top: 10px;
+    background-color: lightblue;
+
+}         

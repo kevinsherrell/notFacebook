@@ -9,7 +9,7 @@ import { Provider } from 'react-redux'
 import store from './store'
 
 import LoginPage from './components/LoginPage/LoginPage'
-import Profile from './components/Profile/Profile'
+import Dashboard from './components/Dashboard/Dashboard'
 
 import './css/base.css'
 
@@ -28,7 +28,7 @@ class App extends Component {
             <Provider store={store}>
                 <Router>
                     <Route exact path='/' component={LoginPage} />
-                    <Route exact path='/profile' component={Profile}/>
+                    <Route exact path='/dashboard' component={Dashboard}/>
                 </Router>
             </Provider>
 

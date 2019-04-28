@@ -23,12 +23,13 @@ body {
   display: grid;
   grid-template-columns: 3fr 1fr;
   align-content: center;
-  padding-top: 20px;
-  padding-bottom: 15px; }
+  padding-top: 15px;
+  padding-bottom: 10px; }
 
 header {
   background-color: #3b5998;
-  color: white; }
+  color: white;
+  z-index: 3; }
   header .notFacebook {
     display: grid;
     grid-template-columns: .2fr 2fr;
@@ -200,6 +201,13 @@ footer {
   background-size: cover;
   border-radius: 50%; }
 
+.dashboardHeader {
+  position: fixed;
+  width: 100%;
+  margin-top: 0;
+  top: 0;
+  z-index: 0; }
+
 .profileWrapper {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -293,15 +301,61 @@ footer {
 
 .profileBodyWrapper {
   max-width: 65%;
+  margin-top: 54px;
   margin-left: 10%;
   z-index: 1; }
   .profileBodyWrapper .profileBody {
     display: flex;
     margin-top: 10px; }
+    .profileBodyWrapper .profileBody .leftSideContainer {
+      padding: 0 5px; }
     .profileBodyWrapper .profileBody .left {
+      position: fixed;
       width: 20%; }
+      .profileBodyWrapper .profileBody .left p {
+        padding-left: 15px;
+        font-size: 14px; }
+      .profileBodyWrapper .profileBody .left i {
+        font-size: 15px; }
+      .profileBodyWrapper .profileBody .left .newsFeed,
+      .profileBodyWrapper .profileBody .left .leftMessenger,
+      .profileBodyWrapper .profileBody .left .watch,
+      .profileBodyWrapper .profileBody .left .marketplace,
+      .profileBodyWrapper .profileBody .left .dragonCity,
+      .profileBodyWrapper .profileBody .left .pages,
+      .profileBodyWrapper .profileBody .left .groups,
+      .profileBodyWrapper .profileBody .left .oculus,
+      .profileBodyWrapper .profileBody .left .events,
+      .profileBodyWrapper .profileBody .left .fundraisers,
+      .profileBodyWrapper .profileBody .left .seeMore {
+        padding-bottom: 5px; }
+      .profileBodyWrapper .profileBody .left .newsFeed i {
+        color: #5caee8; }
+      .profileBodyWrapper .profileBody .left .leftMessenger i {
+        color: #089cf4; }
+      .profileBodyWrapper .profileBody .left .watch i {
+        color: #e4ffff; }
+      .profileBodyWrapper .profileBody .left .marketplace i {
+        color: #fcffff; }
+      .profileBodyWrapper .profileBody .left .dragonCity i {
+        color: #57b8a5; }
+      .profileBodyWrapper .profileBody .left .pages i {
+        color: #dc412d; }
+      .profileBodyWrapper .profileBody .left .groups i {
+        color: #f9a159; }
+      .profileBodyWrapper .profileBody .left .oculus i {
+        color: #3983fe; }
+      .profileBodyWrapper .profileBody .left .events i {
+        color: #d63056; }
+      .profileBodyWrapper .profileBody .left .fundraisers i {
+        color: #202427; }
+      .profileBodyWrapper .profileBody .left .seeMore i {
+        color: #3983fe; }
+      .profileBodyWrapper .profileBody .left .leftHeader {
+        font-weight: 100;
+        padding: 20px 0; }
       .profileBodyWrapper .profileBody .left .leftAvatarContainer {
-        display: flex; }
+        margin-bottom: 15px; }
         .profileBodyWrapper .profileBody .left .leftAvatarContainer .leftAvatar {
           border-radius: 50%;
           height: 25px;
@@ -309,13 +363,13 @@ footer {
           background-color: lightblue;
           overflow: hidden;
           padding-right: 5px; }
-      .profileBodyWrapper .profileBody .left p {
-        padding-left: 5px;
-        align-self: center;
-        font-size: 14px; }
+        .profileBodyWrapper .profileBody .left .leftAvatarContainer p {
+          padding-left: 5px;
+          align-self: center;
+          font-size: 14px; }
     .profileBodyWrapper .profileBody .mid {
       width: 50%;
-      margin: 0 10px; }
+      margin-left: 20%; }
       .profileBodyWrapper .profileBody .mid .createPost {
         position: relative;
         width: 100%;
@@ -368,12 +422,14 @@ footer {
             width: 96%;
             height: 50px; }
     .profileBodyWrapper .profileBody .right {
+      position: relative;
+      padding-left: 10px;
       width: 30%; }
 
 .isFocused {
   position: relative;
   height: 26px;
-  z-index: 2; }
+  z-index: 4; }
 
 .notFocusedAfter {
   position: fixed;
@@ -393,3 +449,20 @@ footer {
   z-index: -1;
   background-color: rgba(0, 0, 0, 0);
   transition: all ease-in 300ms; }
+
+.flex {
+  display: flex; }
+
+.block {
+  display: block; }
+
+.testblock,
+.testblock2 {
+  height: 300px;
+  margin-bottom: 5px;
+  background-color: pink; }
+
+.testblock2 {
+  position: sticky;
+  top: 54px;
+  background-color: lightblue; }
