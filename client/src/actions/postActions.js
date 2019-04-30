@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-import {ADD_POST,GET_ERRORS} from './types'
+import {ADD_POST,GET_ADD_POST_ERRORS} from './types'
 
 export const addPost = postData => dispatch => {
     axios.post('/api/posts', postData)
@@ -12,7 +12,7 @@ export const addPost = postData => dispatch => {
         )
         .catch(err =>
             dispatch({
-                type: GET_ERRORS,
+                type: GET_ADD_POST_ERRORS,
                 payload: err.response.data
             })
         )

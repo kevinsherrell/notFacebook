@@ -16,11 +16,11 @@ class Posts extends Component {
                         </div>
                         <div className='postsHeaderGrid'>
                             <p>name</p>
-                            <p>time posted <span><i class="fas fa-globe-americas"></i></span></p>
+                            <p>time posted <span><i className="fas fa-globe-americas"></i></span></p>
                         </div>
                         <div className="postsMenu flex">
                             <div>
-                                <span><i class="fas fa-ellipsis-h"></i></span>
+                                <span><i className="fas fa-ellipsis-h"></i></span>
                             </div>
 
                         </div>
@@ -39,9 +39,9 @@ class Posts extends Component {
 
                 </div>
                 <div className="postsActions flex">
-                    <div><span><i class="fas fa-thumbs-up"></i></span> Like</div>
-                    <div><span><i class="far fa-comment"></i></span> Comment</div>
-                    <div><span><i class="fas fa-share"></i></span> Share</div>
+                    <div><span><i className="fas fa-thumbs-up"></i></span> Like</div>
+                    <div><span><i className="far fa-comment"></i></span> Comment</div>
+                    <div><span><i className="fas fa-share"></i></span> Share</div>
 
                 </div>
                 <form className="postsInput ">

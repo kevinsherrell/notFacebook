@@ -4,6 +4,7 @@ import authReducer from './authReducer'
 import createAccountErrorReducer from './createAccountErrorReducer'
 import loginErrorReducer from './loginErrorReducer'
 import postReducer from './postReducer'
+import addPostErrorReducer from './addPostErrorReducer'
 
 
 export default combineReducers({
@@ -12,4 +13,5 @@ export default combineReducers({
     regError: createAccountErrorReducer,
     loginError: loginErrorReducer,
     post: postReducer,
+    addPostError: addPostErrorReducer
 })
