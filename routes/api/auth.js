@@ -105,7 +105,8 @@ authRouter.post('/login', (req, res, next) => {
                         firstName: user.firstName,
                         lastName: user.lastName,
                         dateCreated: user.dateCreated,
-                        birthDate: user.birthDate
+                        birthDate: user.birthDate,
+                        gender: user.gender
                     }
                     jwt.sign(
                         payload,

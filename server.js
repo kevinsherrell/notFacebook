@@ -22,6 +22,7 @@ mongoose.connect('mongodb://localhost:27017/notFacebook', { useNewUrlParser: tru
 app.use('/api/auth', require('./routes/api/auth'))
 app.use('/api/posts', require('./routes/api/posts'))
 app.use('/api/profile', require('./routes/api/profile'))
+app.use('/api/posts', require('./routes/api/posts'))
 
 // GLOBAL ERROR HANDLER
 app.use((err, req, res, next) => {

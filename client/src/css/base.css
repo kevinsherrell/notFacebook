@@ -29,7 +29,7 @@ body {
 header {
   background-color: #3b5998;
   color: white;
-  z-index: 3; }
+  z-index: 1; }
   header .notFacebook {
     display: grid;
     grid-template-columns: .2fr 2fr;
@@ -205,21 +205,20 @@ footer {
   position: fixed;
   width: 100%;
   margin-top: 0;
-  top: 0;
-  z-index: 0; }
+  top: 0; }
 
-.profileWrapper {
+.dashboardWrapper {
   display: grid;
   grid-template-columns: 2fr 1fr;
   max-width: 65%;
   margin-left: 10%;
   padding: 8px 0; }
 
-.profileHeaderGridContainerLeft,
-.profileHeaderGridContainerRight {
+.dashboardHeaderGridContainerLeft,
+.dashboardHeaderGridContainerRight {
   display: flex; }
 
-.profileHeaderGridContainerRight {
+.dashboardHeaderGridContainerRight {
   justify-content: flex-end; }
 
 .notFacebookLogo {
@@ -299,132 +298,191 @@ footer {
   .headerDropDown span i {
     color: rgba(0, 0, 0, 0.5); }
 
-.profileBodyWrapper {
+.dashboardBodyWrapper {
   max-width: 65%;
   margin-top: 54px;
   margin-left: 10%;
   z-index: 1; }
-  .profileBodyWrapper .profileBody {
+  .dashboardBodyWrapper .dashboardBody {
     display: flex;
     margin-top: 10px; }
-    .profileBodyWrapper .profileBody .leftSideContainer {
+    .dashboardBodyWrapper .dashboardBody .leftSideContainer {
       padding: 0 5px; }
-    .profileBodyWrapper .profileBody .left {
+    .dashboardBodyWrapper .dashboardBody .left {
       position: fixed;
       width: 20%; }
-      .profileBodyWrapper .profileBody .left p {
+      .dashboardBodyWrapper .dashboardBody .left p {
         padding-left: 15px;
         font-size: 14px; }
-      .profileBodyWrapper .profileBody .left i {
+      .dashboardBodyWrapper .dashboardBody .left i {
         font-size: 15px; }
-      .profileBodyWrapper .profileBody .left .newsFeed,
-      .profileBodyWrapper .profileBody .left .leftMessenger,
-      .profileBodyWrapper .profileBody .left .watch,
-      .profileBodyWrapper .profileBody .left .marketplace,
-      .profileBodyWrapper .profileBody .left .dragonCity,
-      .profileBodyWrapper .profileBody .left .pages,
-      .profileBodyWrapper .profileBody .left .groups,
-      .profileBodyWrapper .profileBody .left .oculus,
-      .profileBodyWrapper .profileBody .left .events,
-      .profileBodyWrapper .profileBody .left .fundraisers,
-      .profileBodyWrapper .profileBody .left .seeMore {
+      .dashboardBodyWrapper .dashboardBody .left .newsFeed,
+      .dashboardBodyWrapper .dashboardBody .left .leftMessenger,
+      .dashboardBodyWrapper .dashboardBody .left .watch,
+      .dashboardBodyWrapper .dashboardBody .left .marketplace,
+      .dashboardBodyWrapper .dashboardBody .left .dragonCity,
+      .dashboardBodyWrapper .dashboardBody .left .pages,
+      .dashboardBodyWrapper .dashboardBody .left .groups,
+      .dashboardBodyWrapper .dashboardBody .left .oculus,
+      .dashboardBodyWrapper .dashboardBody .left .events,
+      .dashboardBodyWrapper .dashboardBody .left .fundraisers,
+      .dashboardBodyWrapper .dashboardBody .left .seeMore {
         padding-bottom: 5px; }
-      .profileBodyWrapper .profileBody .left .newsFeed i {
+      .dashboardBodyWrapper .dashboardBody .left .newsFeed i {
         color: #5caee8; }
-      .profileBodyWrapper .profileBody .left .leftMessenger i {
+      .dashboardBodyWrapper .dashboardBody .left .leftMessenger i {
         color: #089cf4; }
-      .profileBodyWrapper .profileBody .left .watch i {
+      .dashboardBodyWrapper .dashboardBody .left .watch i {
         color: #e4ffff; }
-      .profileBodyWrapper .profileBody .left .marketplace i {
+      .dashboardBodyWrapper .dashboardBody .left .marketplace i {
         color: #fcffff; }
-      .profileBodyWrapper .profileBody .left .dragonCity i {
+      .dashboardBodyWrapper .dashboardBody .left .dragonCity i {
         color: #57b8a5; }
-      .profileBodyWrapper .profileBody .left .pages i {
+      .dashboardBodyWrapper .dashboardBody .left .pages i {
         color: #dc412d; }
-      .profileBodyWrapper .profileBody .left .groups i {
+      .dashboardBodyWrapper .dashboardBody .left .groups i {
         color: #f9a159; }
-      .profileBodyWrapper .profileBody .left .oculus i {
+      .dashboardBodyWrapper .dashboardBody .left .oculus i {
         color: #3983fe; }
-      .profileBodyWrapper .profileBody .left .events i {
+      .dashboardBodyWrapper .dashboardBody .left .events i {
         color: #d63056; }
-      .profileBodyWrapper .profileBody .left .fundraisers i {
+      .dashboardBodyWrapper .dashboardBody .left .fundraisers i {
         color: #202427; }
-      .profileBodyWrapper .profileBody .left .seeMore i {
+      .dashboardBodyWrapper .dashboardBody .left .seeMore i {
         color: #3983fe; }
-      .profileBodyWrapper .profileBody .left .leftHeader {
+      .dashboardBodyWrapper .dashboardBody .left .leftHeader {
         font-weight: 100;
         padding: 20px 0; }
-      .profileBodyWrapper .profileBody .left .leftAvatarContainer {
+      .dashboardBodyWrapper .dashboardBody .left .leftAvatarContainer {
         margin-bottom: 15px; }
-        .profileBodyWrapper .profileBody .left .leftAvatarContainer .leftAvatar {
+        .dashboardBodyWrapper .dashboardBody .left .leftAvatarContainer .leftAvatar {
           border-radius: 50%;
           height: 25px;
           width: 25px;
           background-color: lightblue;
           overflow: hidden;
           padding-right: 5px; }
-        .profileBodyWrapper .profileBody .left .leftAvatarContainer p {
+        .dashboardBodyWrapper .dashboardBody .left .leftAvatarContainer p {
           padding-left: 5px;
           align-self: center;
           font-size: 14px; }
-    .profileBodyWrapper .profileBody .mid {
+    .dashboardBodyWrapper .dashboardBody .mid {
       width: 50%;
       margin-left: 20%; }
-      .profileBodyWrapper .profileBody .mid .createPost {
+      .dashboardBodyWrapper .dashboardBody .mid .createPost {
         position: relative;
         width: 100%;
         height: 175px;
         border: 1px solid rgba(0, 0, 0, 0.2);
         border-radius: 5px;
         background-color: #fff; }
-        .profileBodyWrapper .profileBody .mid .createPost .postHeader {
+        .dashboardBodyWrapper .dashboardBody .mid .createPost .postHeader {
           height: 40px;
           font-size: 12px;
           padding: 8px 10px;
           border-bottom: 1px solid rgba(0, 0, 0, 0.08);
           background-color: #eaebef; }
-        .profileBodyWrapper .profileBody .mid .createPost .postContainer {
-          width: 96%;
-          height: 100%;
-          margin: 0 auto; }
-          .profileBodyWrapper .profileBody .mid .createPost .postContainer .postBody {
-            display: flex;
-            padding: 15px 0;
-            height: 50%; }
-            .profileBodyWrapper .profileBody .mid .createPost .postContainer .postBody .postBodyAvatarContainer {
-              width: 40px;
-              height: 40px;
-              border-radius: 50%;
-              background-color: lightblue;
-              overflow: hidden; }
-            .profileBodyWrapper .profileBody .mid .createPost .postContainer .postBody .postBodyAvatar {
-              width: 40px;
-              height: 40px; }
-            .profileBodyWrapper .profileBody .mid .createPost .postContainer .postBody .postBodyInput {
-              width: 90%;
-              height: 100%; }
-              .profileBodyWrapper .profileBody .mid .createPost .postContainer .postBody .postBodyInput textarea {
-                border: none;
-                resize: none;
-                width: 100%;
-                height: 100%; }
-              .profileBodyWrapper .profileBody .mid .createPost .postContainer .postBody .postBodyInput input[type='text'],
-              .profileBodyWrapper .profileBody .mid .createPost .postContainer .postBody .postBodyInput input[type='password'],
-              .profileBodyWrapper .profileBody .mid .createPost .postContainer .postBody .postBodyInput textarea, .profileBodyWrapper .profileBody .mid .createPost .postContainer .postBody .postBodyInput select {
-                outline: none; }
-              .profileBodyWrapper .profileBody .mid .createPost .postContainer .postBody .postBodyInput textarea[placeholder] {
-                font-size: 20px;
-                padding: 8px; }
-          .profileBodyWrapper .profileBody .mid .createPost .postContainer .postOptions {
-            position: absolute;
-            bottom: 0;
-            border-top: 1px solid rgba(0, 0, 0, 0.08);
-            width: 96%;
-            height: 50px; }
-    .profileBodyWrapper .profileBody .right {
+    .dashboardBodyWrapper .dashboardBody .right {
       position: relative;
       padding-left: 10px;
       width: 30%; }
+
+.postContainer {
+  width: 96%;
+  height: 100%;
+  margin: 0 auto; }
+  .postContainer .postBody {
+    display: flex;
+    padding: 15px 0;
+    height: 50%; }
+    .postContainer .postBody .postBodyAvatar {
+      width: 40px;
+      height: 40px; }
+    .postContainer .postBody .postBodyInput {
+      width: 90%;
+      height: 100%; }
+      .postContainer .postBody .postBodyInput textarea {
+        border: none;
+        resize: none;
+        width: 100%;
+        height: 100%; }
+      .postContainer .postBody .postBodyInput input[type='text'],
+      .postContainer .postBody .postBodyInput input[type='password'],
+      .postContainer .postBody .postBodyInput textarea, .postContainer .postBody .postBodyInput select {
+        outline: none; }
+      .postContainer .postBody .postBodyInput textarea[placeholder] {
+        font-size: 20px;
+        padding: 8px; }
+  .postContainer .postOptions {
+    position: absolute;
+    bottom: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    width: 96%;
+    height: 50px; }
+
+.postBodyAvatarContainer {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: lightblue;
+  overflow: hidden; }
+
+.posts {
+  position: relative;
+  margin-top: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: white; }
+
+.postsBody {
+  padding-top: 10px;
+  min-height: 100px; }
+
+.postedHeader {
+  padding-top: 5px;
+  height: 50px;
+  background-color: #eaebef;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08); }
+
+.postsHeaderGrid {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  padding-left: 10px; }
+
+.postsMenu {
+  position: absolute;
+  right: 15px;
+  font-size: 1.2rem; }
+
+.postsFeedback {
+  min-height: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2); }
+
+.postsActions {
+  padding-top: 15px;
+  min-height: 50px;
+  color: rgba(0, 0, 0, 0.6); }
+  .postsActions div {
+    width: 33.33%;
+    text-align: center; }
+  .postsActions p {
+    font-size: 18px; }
+
+.commentAction {
+  padding: 0 100px; }
+
+.postsInput {
+  padding-top: 5px;
+  min-height: 50px;
+  border-top: 1px solid rgba(0, 0, 0, 0.2); }
+  .postsInput input {
+    width: 450px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 15px; }
+
+.postCommentAvatar {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px; }
 
 .isFocused {
   position: relative;
@@ -437,6 +495,7 @@ footer {
   left: 0;
   width: 100vw;
   height: 100vh;
+  z-index: 1;
   background-color: rgba(0, 0, 0, 0.5);
   transition: all ease-in 300ms; }
 
