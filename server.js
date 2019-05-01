@@ -3,7 +3,7 @@ const app = express()
 const morgan = require('morgan')
 const mongoose = require('mongoose')
 const passport = require('passport')
-
+const mongoURI = require('./config/keys_dev').mongoURI
 // Validation
 
 // MIDDLEWARE
@@ -14,7 +14,7 @@ app.use(passport.initialize())
 //      passport config
 require('./config/passport')(passport)
 // CONNECT TO THE DATABASE
-mongoose.connect('mongodb://localhost:27017/notFacebook', { useNewUrlParser: true }, () => {
+mongoose.connect(mongoURI, { useNewUrlParser: true }, () => {
     console.log('[o] Connected to the DB')
 })
 
