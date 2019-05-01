@@ -8,7 +8,7 @@
 }
 .dashboardWrapper{
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1.5fr 1fr;
     max-width: 65%;  
     margin-left: 10%;
     padding: 8px 0;  
@@ -57,7 +57,8 @@
     height: 25px;
     border-radius: 50%;
     color: $primaryColor;
-    background-color: $secondaryColor;
+    // background-color: $secondaryColor;
+    
     align-self: center;
 }
 .nameHeader,
@@ -166,12 +167,12 @@
             }
             .watch{
                 i{
-                    color: #e4ffff;
+                    color: &primaryColor;
                 }
             }
             .marketplace{
                 i{
-                    color: #fcffff;
+                    color: green;
                 }
             }
             .dragonCity{
@@ -241,7 +242,9 @@
             // margin: 0 10px;
             margin-left: 20%;
             // margin-top: 40%;
-            
+            .test{
+                display: hidden;
+            }
             .createPost{
                 position: relative;      
                 width: 100%;  
@@ -306,6 +309,7 @@
             font-size: 20px; 
             padding: 8px;
         }
+        
     }
     
     }
@@ -316,7 +320,15 @@
         // background: red;  
         width: 96%;    
         height: 50px;   
-            
+        .postButton{
+            border: none;
+            width: 100%;
+            padding: 10px;
+            border-radius: 15px;
+            font-size: 18px;
+            color: white;
+            background-color: $primaryColor
+        }
         
     }
 }
@@ -324,7 +336,9 @@
     width: 40px;
     height: 40px;  
     border-radius: 50%;
-    background-color: lightblue;
+    // background-image: url(https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png);
+    // background-size: cover;
+    // background-position: center;
     overflow: hidden;
 }
 // Posts
@@ -337,7 +351,7 @@
 }
 .postsBody{
     padding-top: 10px;
-    min-height: 100px;
+    // min-height: 100px;
     // border-bottom: 1px solid rgba(0,0,0,.2);    
 
 }
@@ -400,6 +414,16 @@
     height: 30px;
    margin-right: 10px;
 }
+.deletePost{
+   
+    border: none;
+    border-radius: 15px;
+    background-color: $primaryColor;
+    color: white;
+    padding: 5px;
+    margin-top: 6px;
+    
+}
 // Conditional Classes
 .isFocused{
     position: relative;
@@ -429,8 +453,15 @@
     transition: all ease-in 300ms;              
 
 }  
+.postMenu{
+    background-color: $primaryColor;
+    height: 100px;
+    width: 100px;
+}
 // 
-
+.isInvalidPost{
+    border: 1px solid red;
+}
 .flex{
     display: flex;
 }

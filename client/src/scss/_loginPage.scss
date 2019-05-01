@@ -1,7 +1,9 @@
 body {
-    background-color: #eaebef;
+    // background-color: #eaebef;
+    background: #f5f6f8;
 
 }
+
 // HEADER
 .loginWrapper {  
     width: 55%;
@@ -86,9 +88,7 @@ header {
         
     }
 }
-.isInvalid{
-    border: 1px solid red;
-}
+
 .loginBodyWrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -260,4 +260,8 @@ footer{
     background-position: center;
     background-size: cover;
     border-radius: 50%;
+}
+.isInvalid{
+
+    border: 1px solid red !important;
 }

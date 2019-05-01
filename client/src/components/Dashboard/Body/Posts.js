@@ -1,27 +1,50 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
+import { deletePost } from '../../../actions/postActions'
+import axios from 'axios'
+const avatarImage = "url('https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png')"
+
+const backgroundStyles = {
+    backgroundImage: "url('https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png')",
+    backgroundSize: "cover",
+    backroundPostition: "center"
+}
 
 class Posts extends Component {
-    state = {}
+    state = {
+        posts: {},
+        deletePostError: {}
+    }
+
+
+    onClickDelete = (id) => {
+        id = this.props._id
+        this.props.deletePost(id)
+    }
     render() {
+        console.log(this.props)
+       
         return (
             <div className='posts'>
                 <div className="postedHeader">
                     <div className='postContainer flex'>
-                        <div className='postBodyAvatarContainer'>
+                        <div style={backgroundStyles} className='postBodyAvatarContainer'>
                             <div className="postBodyAvatar">
-                                <span>avatar</span>
+                                {/* <span>avatar</span> */}
                             </div>
                         </div>
                         <div className='postsHeaderGrid'>
-                            <p>name</p>
-                            <p>time posted <span><i className="fas fa-globe-americas"></i></span></p>
+                            <p>{this.props.name}</p>
+                            <p>{this.props.dateCreated} <span><i className="fas fa-globe-americas"></i></span></p>
                         </div>
                         <div className="postsMenu flex">
-                            <div>
-                                <span><i className="fas fa-ellipsis-h"></i></span>
-                            </div>
+                            {this.props.user === this.props.auth.user.id && (
+                                <div>
+                                    <button className='deletePost' onClick={this.onClickDelete}>Delete Post</button>
+
+                                </div>
+                            )}
 
                         </div>
                     </div>
@@ -29,7 +52,7 @@ class Posts extends Component {
                 <div className="postContainer">
 
                     <div className="postsBody">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet accusamus quod sapiente distinctio, nesciunt veniam? Tempore est tempora amet in hic vitae doloremque ab officiis eaque quasi, reiciendis delectus assumenda temporibus vel necessitatibus excepturi placeat unde ipsam. Neque beatae doloribus aliquid, cum, voluptate possimus quam, asperiores et officiis inventore accusantium nam. Facere repellat tenetur nemo accusantium dignissimos eius odio id, corrupti est culpa dolore assumenda magnam, praesentium nisi. Amet sit quasi nam voluptate sunt quibusdam perspiciatis? Eius, veniam nam illo ipsam delectus eaque quos accusantium. Earum, in. Tempore perferendis cum exercitationem est minus accusantium provident autem enim officiis tenetur velit iure mollitia ab quam itaque, nesciunt eligendi eius molestias cupiditate sed, obcaecati veniam! Quidem dignissimos earum perferendis molestiae praesentium porro, neque aspernatur, quisquam minus ducimus mollitia eveniet dolorum. Quasi, expedita?
+                        {this.props.body}
                     </div>
 
                     <div className="postsFeedback">
@@ -46,17 +69,27 @@ class Posts extends Component {
                 </div>
                 <form className="postsInput ">
                     <div className='postContainer flex'>
-                        <div className='postBodyAvatarContainer postCommentAvatar'>
+                        <div style={backgroundStyles} className='postBodyAvatarContainer postCommentAvatar'>
                             <div className="postBodyAvatar">
-                                <span>avatar</span>
                             </div>
                         </div>
-                        <input type="text" placeholder="Write a comment..."/>
+                        <input type="text" placeholder="Write a comment..." />
                     </div>
+                    <button></button>
                 </form>
+
+
             </div>
         );
     }
 }
-
-export default Posts;
+Posts.propTypes = {
+    deletePost: PropTypes.func.isRequired,
+    auth: PropTypes.object.isRequired
+}
+const mapStateToProps = state => ({
+    post: state.post,
+    auth: state.auth,
+    deletPostError: state.deletePostError
+})
+export default connect(mapStateToProps, { deletePost })(Posts);

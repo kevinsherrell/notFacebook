@@ -1,6 +1,17 @@
 import React from 'react';
 import SearchForm from './SearchForm'
-const Header = () => {
+
+import { connect } from 'react-redux'
+
+const avatarImage = "url('https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png')"
+
+const backgroundStyles = {
+    backgroundImage: "url('https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png')",
+    backgroundSize: "cover",
+    backroundPostition: "center"
+}
+const Header = (props) => {
+    console.log(props)
     return (
         <header className='dashboardHeader'>
             <div className='dashboardWrapper '>
@@ -14,11 +25,11 @@ const Header = () => {
                 </div>
 
                 <div className="dashboardHeaderGridContainerRight">
-                    <div className='headerAvatarContainer'>
-                        <div className="headerAvatar">
-                            <span>avatar</span>
+                    <div  className='headerAvatarContainer'>
+                        <div style={backgroundStyles} className="headerAvatar">
+                            
                         </div>
-                        <p className="nameHeader">name</p>
+                        <p className="nameHeader">{`${props.auth.user.firstName} ${props.auth.user.lastName} `}</p>
                     </div>
                     <p className="home">Home</p>
                     <p className="create">Create</p>
@@ -32,5 +43,7 @@ const Header = () => {
         </header>
     );
 }
-
-export default Header;
+const mapStateToProps = state => ({
+    auth: state.auth
+})
+export default connect(mapStateToProps)(Header);

@@ -1,13 +1,22 @@
 import React from 'react';
-const LeftSidebar = () => {
+import {connect} from 'react-redux'
+
+const avatarImage = "url('https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png')"
+
+const backgroundStyles = {
+    backgroundImage: "url('https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png')",
+    backgroundSize: "cover",
+    backroundPostition: "center"
+}
+const LeftSidebar = (props) => {
     return (
         <div className="left leftSideContainer">
                             {/* avatar */}
                             <div className='leftAvatarContainer flex'>
-                                <div className='leftAvatar'>
-                                    <span>avatar</span>
+                                <div style={backgroundStyles} className='leftAvatar'>
+                                    
                                 </div>
-                                <p>Person</p>
+                                <p>{`${props.auth.user.firstName} ${props.auth.user.lastName}`}</p>
                             </div>
 
                             <div className="newsFeed flex">
@@ -62,5 +71,7 @@ const LeftSidebar = () => {
                         </div>
       );
 }
- 
-export default LeftSidebar
+const mapStateToProps = state=>({
+    auth: state.auth
+})
+export default connect(mapStateToProps)(LeftSidebar)

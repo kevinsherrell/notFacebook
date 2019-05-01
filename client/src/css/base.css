@@ -13,7 +13,7 @@ input {
   color: #999; }
 
 body {
-  background-color: #eaebef; }
+  background: #f5f6f8; }
 
 .loginWrapper {
   width: 55%;
@@ -76,9 +76,6 @@ header {
       border: none;
       background-color: #4167b2;
       color: inherit; }
-
-.isInvalid {
-  border: 1px solid red; }
 
 .loginBodyWrapper {
   display: grid;
@@ -201,6 +198,9 @@ footer {
   background-size: cover;
   border-radius: 50%; }
 
+.isInvalid {
+  border: 1px solid red !important; }
+
 .dashboardHeader {
   position: fixed;
   width: 100%;
@@ -209,7 +209,7 @@ footer {
 
 .dashboardWrapper {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1.5fr 1fr;
   max-width: 65%;
   margin-left: 10%;
   padding: 8px 0; }
@@ -252,7 +252,6 @@ footer {
   height: 25px;
   border-radius: 50%;
   color: #3b5998;
-  background-color: white;
   align-self: center; }
 
 .nameHeader,
@@ -333,9 +332,9 @@ footer {
       .dashboardBodyWrapper .dashboardBody .left .leftMessenger i {
         color: #089cf4; }
       .dashboardBodyWrapper .dashboardBody .left .watch i {
-        color: #e4ffff; }
+        color: .dashboardBodyWrapper .dashboardBody .left .watch i primaryColor; }
       .dashboardBodyWrapper .dashboardBody .left .marketplace i {
-        color: #fcffff; }
+        color: green; }
       .dashboardBodyWrapper .dashboardBody .left .dragonCity i {
         color: #57b8a5; }
       .dashboardBodyWrapper .dashboardBody .left .pages i {
@@ -369,6 +368,8 @@ footer {
     .dashboardBodyWrapper .dashboardBody .mid {
       width: 50%;
       margin-left: 20%; }
+      .dashboardBodyWrapper .dashboardBody .mid .test {
+        display: hidden; }
       .dashboardBodyWrapper .dashboardBody .mid .createPost {
         position: relative;
         width: 100%;
@@ -419,12 +420,19 @@ footer {
     border-top: 1px solid rgba(0, 0, 0, 0.08);
     width: 96%;
     height: 50px; }
+    .postContainer .postOptions .postButton {
+      border: none;
+      width: 100%;
+      padding: 10px;
+      border-radius: 15px;
+      font-size: 18px;
+      color: white;
+      background-color: #3b5998; }
 
 .postBodyAvatarContainer {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: lightblue;
   overflow: hidden; }
 
 .posts {
@@ -434,8 +442,7 @@ footer {
   background-color: white; }
 
 .postsBody {
-  padding-top: 10px;
-  min-height: 100px; }
+  padding-top: 10px; }
 
 .postedHeader {
   padding-top: 5px;
@@ -484,6 +491,14 @@ footer {
   height: 30px;
   margin-right: 10px; }
 
+.deletePost {
+  border: none;
+  border-radius: 15px;
+  background-color: #3b5998;
+  color: white;
+  padding: 5px;
+  margin-top: 6px; }
+
 .isFocused {
   position: relative;
   height: 26px;
@@ -508,6 +523,14 @@ footer {
   z-index: -1;
   background-color: rgba(0, 0, 0, 0);
   transition: all ease-in 300ms; }
+
+.postMenu {
+  background-color: #3b5998;
+  height: 100px;
+  width: 100px; }
+
+.isInvalidPost {
+  border: 1px solid red; }
 
 .flex {
   display: flex; }
