@@ -23,7 +23,7 @@
   "bugs": {
     "url": "https://github.com/kevinsherrell/notFacebook/issues"
   },
-  "homepage": "https://github.com/kevinsherrell/notFacebook#readme",
+  "homepage": "https://not-facebook.com",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
