@@ -3,7 +3,7 @@ const app = express()
 const morgan = require('morgan')
 const mongoose = require('mongoose')
 const passport = require('passport')
-const mongoURI = require('./config/keys_dev').mongoURI
+const mongoURI = require('./config/keys').mongoURI
 const path = require('path')
 // Validation
 

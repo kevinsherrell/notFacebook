@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "a facebook clone",
   "main": "server.js",
+  "engines": {
+    "node": "11.14.0"
+  },
   "scripts": {
     "start": "node server.js",
     "server": "nodemon server.js",
@@ -34,4 +37,5 @@
     "passport-jwt": "^4.0.0",
     "validator": "^10.11.0"
   }
+  
 }
