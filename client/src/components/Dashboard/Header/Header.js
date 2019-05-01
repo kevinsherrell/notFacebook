@@ -35,7 +35,7 @@ const Header = (props) => {
                     <p className="create">Create</p>
                     <p className="communications"><span className='friends'><i className="fas fa-user-friends"></i></span><span className='messenger'><i className="fab fa-facebook-messenger"></i></span><span className='notifications'><i className="fas fa-bell"></i></span></p>
                     <p className="help"><span><i className="fas fa-question-circle"></i></span></p>
-                    <p className='headerDropDown'><span><i className="fas fa-caret-down"></i></span></p>
+                    <p className='headerDropDown'><button className='logoutButton' onClick={props.onClickLogout}><strong>Logout</strong></button></p>
                 </div>
                 
 
