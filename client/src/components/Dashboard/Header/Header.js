@@ -3,15 +3,15 @@ import SearchForm from './SearchForm'
 
 import { connect } from 'react-redux'
 
-const avatarImage = "url('https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png')"
 
-const backgroundStyles = {
-    backgroundImage: "url('https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png')",
-    backgroundSize: "cover",
-    backroundPostition: "center"
-}
+
 const Header = (props) => {
     console.log(props)
+    const backgroundStyles = {
+        backgroundImage: `url('${props.auth.user.imageUrl}')`,
+        backgroundSize: "cover",
+        backroundPostition: "center"
+    }
     return (
         <header className='dashboardHeader'>
             <div className='dashboardWrapper '>
@@ -44,6 +44,7 @@ const Header = (props) => {
     );
 }
 const mapStateToProps = state => ({
-    auth: state.auth
+    auth: state.auth,
+    
 })
 export default connect(mapStateToProps)(Header);

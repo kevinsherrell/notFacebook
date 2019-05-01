@@ -7,6 +7,7 @@ import postReducer from './postReducer'
 import addPostErrorReducer from './addPostErrorReducer'
 import deletePostErrorReducer from './deletePostErrorReducer'
 import getPostErrorReducer from './getPostErrorReducer'
+import accountCreatedReducer from './accountCreatedReducer'
 
 
 
@@ -18,5 +19,6 @@ export default combineReducers({
     post: postReducer,
     addPostError: addPostErrorReducer,
     getPostError: getPostErrorReducer,
-    deletePostError: deletePostErrorReducer
+    deletePostError: deletePostErrorReducer,
+    accountCreated: accountCreatedReducer
 })

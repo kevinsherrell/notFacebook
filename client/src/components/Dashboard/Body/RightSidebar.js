@@ -1,11 +1,17 @@
 import React from 'react';
 const RightSidebar = () => {
+    const backgroundStyles = {
+        backgroundImage: 'url("https://oralroberts.com/wp-content/uploads/2018/07/ad-placeholder.jpg")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        opacity: '.5'
+    }
     return (
         <div className="right">
-            <div className="testblock">
+            <div style={backgroundStyles} className="testblock">
 
             </div>
-            <div className="testblock2">
+            <div style={backgroundStyles} className="testblock2">
 
             </div>
 

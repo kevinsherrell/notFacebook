@@ -106,7 +106,8 @@ authRouter.post('/login', (req, res, next) => {
                         lastName: user.lastName,
                         dateCreated: user.dateCreated,
                         birthDate: user.birthDate,
-                        gender: user.gender
+                        gender: user.gender,
+                        imageUrl: user.imageUrl
                     }
                     jwt.sign(
                         payload,
@@ -133,6 +134,7 @@ authRouter.get('/current', passport.authenticate('jwt', { session: false }), (re
         firstName: req.user.firstName,
         lastName: req.user.lastName,
         email: req.user.email
+        
     })
 })
 

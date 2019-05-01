@@ -265,3 +265,29 @@ footer{
 
     border: 1px solid red !important;
 }
+.accountCreated{
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 250px;
+    margin: 15% 25%;  
+    z-index: 1;
+    opacity: 5;
+    transition: all ease-in 150ms;
+    background-color: $primaryColor;
+}
+.accountCreatedFalse{
+    position: absolute;
+    top: 0px;
+    width: 50%;
+    height: 250px;
+    margin: 15% 25%;  
+    opacity: 0;  
+    z-index: -2;
+    background-color: $primaryColor;
+}
+.accountCreatedContainer{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,.5);
+}

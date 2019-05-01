@@ -2,16 +2,11 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { addPost } from '../../../actions/postActions'
-import {getPosts} from '../../../actions/postActions'
+import { getPosts } from '../../../actions/postActions'
 import Posts from './Posts'
 
-const avatarImage = "url('https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png')"
 
-const backgroundStyles = {
-    backgroundImage: "url('https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png')",
-    backgroundSize: "cover",
-    backroundPostition: "center"
-}
+
 class NewsFeed extends Component {
     state = {
         body: '',
@@ -50,21 +45,25 @@ class NewsFeed extends Component {
             })
         }
     }
-    componentDidMount(){
+    componentDidMount() {
         this.props.getPosts()
     }
-    
+
     render() {
 
         const { addPostError, getPostError } = this.state
-        const {posts} = this.props.post
+        const { posts } = this.props.post
         // console.log(posts)
         // let postContent = <Posts posts={posts}/>
-        const mappedPosts = posts.map((post)=>{
-            return <Posts {...post}/>
+        const mappedPosts = posts.map((post) => {
+            return <Posts {...post} />
         })
-    
-       
+
+        const backgroundStyles = {
+            backgroundImage: `url('${this.props.auth.user.imageUrl}')`,
+            backgroundSize: "cover",
+            backroundPostition: "center"
+        }
         return (
             <div className="mid">
 
@@ -74,9 +73,9 @@ class NewsFeed extends Component {
                     </div>
                     <div className='postContainer'>
                         <div className="postBody">
-                            <div  style={backgroundStyles} className='postBodyAvatarContainer'>
+                            <div style={backgroundStyles} className='postBodyAvatarContainer'>
                                 <div className="postBodyAvatar">
-                                   
+
                                 </div>
                             </div>
                             <div className='postBodyInput' onFocus={this.props.onFocus} >

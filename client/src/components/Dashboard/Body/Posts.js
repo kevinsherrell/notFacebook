@@ -3,13 +3,8 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { deletePost } from '../../../actions/postActions'
 import axios from 'axios'
-const avatarImage = "url('https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png')"
 
-const backgroundStyles = {
-    backgroundImage: "url('https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png')",
-    backgroundSize: "cover",
-    backroundPostition: "center"
-}
+
 
 class Posts extends Component {
     state = {
@@ -24,19 +19,28 @@ class Posts extends Component {
     }
     render() {
         console.log(this.props)
-       
+        const backgroundStyles = {
+            backgroundImage: `url('${this.props.auth.user.imageUrl}')`,
+            backgroundSize: "cover",
+            backroundPostition: "center"
+        }
+        const backgroundStylesAlt = {
+            backgroundImage: `url('https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png')`,
+            backgroundSize: "cover",
+            backroundPostition: "center"
+        }
         return (
             <div className='posts'>
                 <div className="postedHeader">
                     <div className='postContainer flex'>
-                        <div style={backgroundStyles} className='postBodyAvatarContainer'>
+                        <div style={this.props.user === this.props.auth.user.id ? backgroundStyles : backgroundStylesAlt } className='postBodyAvatarContainer'>
                             <div className="postBodyAvatar">
                                 {/* <span>avatar</span> */}
                             </div>
                         </div>
                         <div className='postsHeaderGrid'>
                             <p>{this.props.name}</p>
-                            <p>{this.props.dateCreated} <span><i className="fas fa-globe-americas"></i></span></p>
+                            <p>{this.props.dateCreated.slice(0, this.props.dateCreated.length -14)} <span><i className="fas fa-globe-americas"></i></span></p>
                         </div>
                         <div className="postsMenu flex">
                             {this.props.user === this.props.auth.user.id && (
@@ -51,7 +55,7 @@ class Posts extends Component {
                 </div>
                 <div className="postContainer">
 
-                    <div className="postsBody">
+                    <div style={{color: 'rgba(0,0,0,.8)'}} className="postsBody">
                         {this.props.body}
                     </div>
 

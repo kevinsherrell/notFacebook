@@ -22,6 +22,7 @@ class LoginForm extends Component {
             password: this.state.password
         }
         // console.log(user)
+        
         this.props.userLogin(userData, this.props.history)
     }
 
@@ -57,11 +58,10 @@ class LoginForm extends Component {
 LoginForm.propTypes = {
     userLogin: PropTypes.func.isRequired,
     auth: PropTypes.object.isRequired,
-    loginError: PropTypes.object.isRequired
+    loginError: PropTypes.object.isRequired,
 }
 const mapStateToProps = (state) => ({
     auth: state.auth,
-    // errors: state.errors
-    loginError: state.loginError
+    loginError: state.loginError,
 })
 export default connect(mapStateToProps, { userLogin })(withRouter(LoginForm));

@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-import { ADD_POST, GET_POSTS,GET_POST_ERRORS, GET_ADD_POST_ERRORS, DELETE_POSTS, DELETE_POSTS_ERRORS } from './types'
+import { ADD_POST, GET_POSTS, GET_POST_ERRORS, GET_ADD_POST_ERRORS, DELETE_POSTS, DELETE_POSTS_ERRORS } from './types'
 
 // create a new post
 export const addPost = postData => dispatch => {
@@ -27,14 +27,15 @@ export const getPosts = () => dispatch => {
         })
 
         )
-        .catch(err=>{
+        .catch(err => {
             dispatch({
                 type: GET_POST_ERRORS,
                 payload: err.response.data
             })
         })
 }
-// export const getPosts
+
+
 // delete a post
 export const deletePost = id => dispatch => {
     axios.delete(`/api/posts/${id}`)

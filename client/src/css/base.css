@@ -201,6 +201,32 @@ footer {
 .isInvalid {
   border: 1px solid red !important; }
 
+.accountCreated {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 250px;
+  margin: 15% 25%;
+  z-index: 1;
+  opacity: 5;
+  transition: all ease-in 150ms;
+  background-color: #3b5998; }
+
+.accountCreatedFalse {
+  position: absolute;
+  top: 0px;
+  width: 50%;
+  height: 250px;
+  margin: 15% 25%;
+  opacity: 0;
+  z-index: -2;
+  background-color: #3b5998; }
+
+.accountCreatedContainer {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); }
+
 .dashboardHeader {
   position: fixed;
   width: 100%;
@@ -552,10 +578,8 @@ footer {
 .testblock,
 .testblock2 {
   height: 300px;
-  margin-bottom: 5px;
-  background-color: pink; }
+  margin-bottom: 5px; }
 
 .testblock2 {
   position: sticky;
-  top: 54px;
-  background-color: lightblue; }
+  top: 54px; }

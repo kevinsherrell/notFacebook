@@ -36,6 +36,10 @@ const UserSchema = new Schema({
     gender: {
         type: String,
         default: ''
+    },
+    imageUrl: {
+        type: String,
+        default: 'https://picsum.photos/200/300'
     }
 })
 

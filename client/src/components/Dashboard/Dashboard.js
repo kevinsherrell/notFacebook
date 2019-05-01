@@ -13,6 +13,7 @@ import { userLogout } from '../../actions/authActions'
 class Dashboard extends Component {
     state = {
         auth: {},
+        
         isFocused: false,
         // post form state move to individual component
 
@@ -38,6 +39,7 @@ class Dashboard extends Component {
         e.preventDefault()
         this.props.userLogout()
     }
+
     componentDidMount() {
 
     }
@@ -47,6 +49,8 @@ class Dashboard extends Component {
         }
     }
     render() {
+        const {accountCreated} = this.state
+        console.log(accountCreated)
         return (
 
 
@@ -61,6 +65,7 @@ class Dashboard extends Component {
 
                 {/* Content below will remain hidden until certain conditions are met */}
                 <FocusOverlay {...this.state} handleClick={this.handleClick} />
+               
             </React.Fragment >
 
         );
@@ -71,6 +76,7 @@ Dashboard.propTypes = {
     auth: PropTypes.object.isRequired
 }
 const mapStateToProps = (state) => ({
-    auth: state.auth
+    auth: state.auth,
+
 })
 export default connect(mapStateToProps, { userLogout })(Dashboard);
