@@ -13,7 +13,8 @@ app.use(morgan('dev'))
 // passport
 app.use(passport.initialize())
 //      passport config
-require('./config/passport')(passport)
+// require('./config/passport')(passport)
+const passport = require('/config/passport')
 // CONNECT TO THE DATABASE
 mongoose.connect(mongoURI, { useNewUrlParser: true }, () => {
     console.log('[o] Connected to the DB')
