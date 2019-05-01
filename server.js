@@ -4,6 +4,7 @@ const morgan = require('morgan')
 const mongoose = require('mongoose')
 const passport = require('passport')
 const mongoURI = require('./config/keys_dev').mongoURI
+const path = require('path')
 // Validation
 
 // MIDDLEWARE
@@ -23,6 +24,13 @@ app.use('/api/auth', require('./routes/api/auth'))
 app.use('/api/posts', require('./routes/api/posts'))
 app.use('/api/profile', require('./routes/api/profile'))
 app.use('/api/posts', require('./routes/api/posts'))
+
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('client/build'))
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+    })
+}
 
 // GLOBAL ERROR HANDLER
 app.use((err, req, res, next) => {
