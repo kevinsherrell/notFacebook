@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 const User = require('../models/User.js')
 
 const keys = require('../config/keys')
-
+// 
 const opts = {}
 opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken()
 opts.secretOrKey = keys.secretOrKey
