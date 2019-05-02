@@ -16,7 +16,8 @@ body {
   background: #f5f6f8; }
 
 .loginWrapper {
-  width: 55%;
+  position: relative;
+  width: 800px;
   margin: 0 auto; }
 
 .headerWrapper {
@@ -232,10 +233,11 @@ footer {
   top: 0; }
 
 .dashboardWrapper {
+  position: relative;
   display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  max-width: 65%;
-  margin-left: 10%;
+  grid-template-columns: 1fr 1fr;
+  width: 900px;
+  margin: 0 auto;
   padding: 8px 0; }
 
 .dashboardHeaderGridContainerLeft,
@@ -256,15 +258,16 @@ footer {
     width: 100%; }
 
 .searchForm {
+  width: 100%;
   margin-left: 4px;
   border: 1px solid rgba(0, 0, 0, 0.3); }
   .searchForm .searchInput,
   .searchForm .searchSubmit {
     height: 26px; }
   .searchForm .searchInput {
-    width: 450px; }
+    width: 90%; }
   .searchForm .searchSubmit {
-    width: 25px;
+    width: 10%;
     border: none;
     vertical-align: top; }
 
@@ -332,9 +335,9 @@ footer {
   margin-bottom: 5px; }
 
 .dashboardBodyWrapper {
-  max-width: 65%;
+  width: 900px;
   margin-top: 54px;
-  margin-left: 10%;
+  margin: 0 auto;
   z-index: 1; }
   .dashboardBodyWrapper .dashboardBody {
     display: flex;
@@ -577,6 +580,9 @@ footer {
 .testblock2 {
   height: 300px;
   margin-bottom: 5px; }
+
+.testblock {
+  margin-top: 40px; }
 
 .testblock2 {
   position: sticky;
