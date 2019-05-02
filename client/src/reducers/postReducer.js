@@ -1,7 +1,6 @@
 import {
     ADD_POST,
     GET_POSTS,
-    GET_ADD_POST_ERRORS,
     DELETE_POSTS
 } from '../actions/types'
 

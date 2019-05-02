@@ -51,12 +51,10 @@ class NewsFeed extends Component {
 
     render() {
 
-        const { addPostError, getPostError } = this.state
         const { posts } = this.props.post
-        // console.log(posts)
-        // let postContent = <Posts posts={posts}/>
+        
         const mappedPosts = posts.map((post) => {
-            return <Posts {...post} />
+            return <Posts {...post} key={post._id}/>
         })
 
         const backgroundStyles = {

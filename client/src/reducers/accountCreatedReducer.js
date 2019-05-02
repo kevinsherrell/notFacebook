@@ -1,5 +1,5 @@
 import { ACCOUNT_CREATED, LOGGED_IN } from '../actions/types'
-import registerUser from '../actions/authActions'
+
 
 const initialState = {
     accountCreated: false,

@@ -58,7 +58,6 @@ class CreateAccountForm extends Component {
 
 
         const { regError } = this.state
-        const {accountCreated, messageClicked} = this.state
         
        
         return (
@@ -158,7 +157,7 @@ class CreateAccountForm extends Component {
                     <p className='terms'>By clicking Sign Up, you agree to our Terms, Data Policy and Cookies Policy. You may receive SMS Notifications from us and can opt out any time.</p>
                     <button>Sign Up</button>
                     <hr />
-                    <p><a href="#">Create a page</a> for a celebrity, band or business</p>
+                    <p><a href='*'>Create a page</a> for a celebrity, band or business</p>
     
                 </form>
              

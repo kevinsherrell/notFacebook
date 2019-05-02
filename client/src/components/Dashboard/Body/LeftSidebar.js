@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
 
-const avatarImage = "url('https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png')"
 
 
 const LeftSidebar = (props) => {
